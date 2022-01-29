@@ -1,30 +1,41 @@
-const person1 = {id: 123, name:'Moshe', addres: {sity: 'Lod', street: 'Sokolov'}};
-const person2 = {id: 123, name:'Moshe', addres: {sity: 'Lod', street: 'Sokolov'}};
-const person3 = person1;
-console.log(`"123" == 123 is ${"123" == 123}`);
-console.log(`"123" === 123 is ${"123" === 123}`);
-console.log(`person1 === person3 is ${person1 == person3}`);
-console.log(`person1 === person2 is ${person1 === person2}`);
-console.log(`JSON.stringify(person1) === JSON.stringify(person2) is ${JSON.stringify(person1) === 
-        JSON.stringify(person2)}`);
-console.log(JSON.stringify(person1));
-console.log(person1.toString());
-console.log(`name of person1 is ${person1.name}`);
-console.log(`person1 livs in city ${person1.addres.sity}`);
-Object.keys(person1).forEach(k => console.log(k));//array of object keys
-Object.values(person1).forEach(v => console.log(v))//array of the object values
-Object.entries(person1).forEach(e=>console.log(e));//array of arrays - [key,value]
-console.log(Object.entries(person1));
-function createAddres(city, street){
-    // {city: city, street: street} <=> {city, street}
-    return {city, street}
-}
-function createPerson(id, name, addres){
-    return {id, name, addres}
-}
-const persons = [
-    createPerson(123,"Vasya",createAddres("Rehovot","Parshani")),
-    createPerson(124,"Olya",createAddres("Rehovot","Pr. Plaut")),
-    createPerson(125,"Tolya",createAddres("Tel-Aviv","Dizingoff")),
-]
-console.log(persons);
+/***********************forEach */
+// const items =['item1','item2','item3'];
+// const copy = [];
+
+// // for(let i = 0;i< items.length;i++){
+// //     copy.push('New'+ items[i]);
+// // }
+
+// items.forEach(function(elem,index,array){
+//     copy.push(index + 'New' + elem)
+// });
+
+// console.log(copy);
+// /*********************filter */
+// //let array = [12, 5, 8, 130, 44];
+// let isBigEnough = (elem) => elem > 15;
+
+// let newArray = array.filter(isBigEnough)
+// console.log(newArray);
+// /******************map */
+// let nums = [1, 4, 9, 12, 50];
+
+// let multiplyBuTo = (elem) => elem * 2;
+
+// let result = nums.map(multiplyBuTo)
+// console.log(result);
+/**********************reduse */
+// const array = [1, 2, 3, 4, 5];
+
+// let total = array.reduce(function(acc,elem){
+//     console.log('Acc: ',acc, 'Current elem: ', elem);
+//     return acc + elem;
+// },10);
+// console.log(total);
+const array = ['apple','banana','peach','orange'];
+
+let fruits = array.reduce((acc,elem) => {
+    acc[elem] = 1;
+    return acc;
+},{})
+console.log(fruits);
